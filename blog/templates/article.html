@@ -9,10 +9,10 @@
     <meta name="author" content="">
     <link rel="icon" href="static/image/favicon.ico">
 
-    <title>Blog Template for Bootstrap</title>
+    <title>Bo-Uncle 博客</title>
 
     <!-- Bootstrap core CSS -->
-    <link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.staticfile.org/flat-ui/2.3.0/css/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <link href="static/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
@@ -32,7 +32,10 @@
   </head>
 
   <body>
-      {{article}}
-
+    {% block content %}
+      {{ article }}
+      {{ comment }}
+      {{ aform }}
+    {% endblock %}
   </body>
 </html>

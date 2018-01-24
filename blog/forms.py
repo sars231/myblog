@@ -31,3 +31,19 @@ class SuggestForm(forms.ModelForm):
                 'cols': 80,
                 })
         }
+
+class ArticleForm(forms.ModelForm):
+    class Meta:
+        model = Article
+        fields = ['title','body','status','abstract','topped','tags']
+        widgets = {
+            'title':forms.Textarea(attrs={
+                'placeholder':'请输入标题',
+                'class':'form-control'
+            }),
+            'body':forms.Textarea(attrs={
+                'placeholder':'请输入正文',
+                'class':'form-control',
+                'rows':15
+            })
+        }

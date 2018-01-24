@@ -18,7 +18,7 @@ class Article(models.Model):
 
     status = models.CharField('文章状态', max_length=1, choices=STATUS_CHOICES)
     abstract = models.CharField('摘要', max_length=54, blank=True, null=True,
-                                help_text="可选项，若为空格则摘取正文钱54个字符")
+                                help_text="可选项，若为空格则摘取正文前54个字符")
     # 阅读量
     views = models.PositiveIntegerField('浏览量', default=0)
     # 点赞数

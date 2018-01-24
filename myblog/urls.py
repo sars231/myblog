@@ -15,10 +15,12 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path,include
-import blog
-from blog import views,urls
+from django.conf.urls import url
+from blog import views,urls,upload
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('',include('blog.urls'))
+    path('',include('blog.urls')),
+    url(r'^admin/uploads/(?P<dir_name>[^/]+)$', upload.upload_image, name='upload_image'),
+#    url(r"^uploads/(?P<path>.*)$", views.static.serve, {"document_root": settings.MEDIA_ROOT, }),
 ]
