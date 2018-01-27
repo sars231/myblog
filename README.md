@@ -10,5 +10,5 @@ excption value:(1366, "Incorrect string value: '\\xE6\\xA0\\x87\\xE9\\xA2\\x98' 
 我们需要将它的默认值改为utf8
 编辑  /etc/mysql/mysql.conf.d/mysqld.cnf    在[mysqld]下添加  character-set-server=utf8
 systemctl restart mysql  重启 MySQL Server，再此查看字符集变量，发现已经是utf8
-这个时候将原来的database删除（drop database 'databasename')，重新再新建一个database（create database 'databasename')，
+这个时候将原来的database删除（drop database 'databasename')，重新再新建一个database（create database 'databasename')，\n
 问题解决
