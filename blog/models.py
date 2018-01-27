@@ -12,8 +12,8 @@ class Article(models.Model):
     # auto_now: 自动将当前时间覆盖之前时间
 
     STATUS_CHOICES = (
-        ('d', 'part'),
-        ('p', 'Published'),
+        ('d', '草稿'),
+        ('p', '发表'),
     )   # 文章的状态
 
     status = models.CharField('文章状态', max_length=1, choices=STATUS_CHOICES)

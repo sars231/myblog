@@ -39,11 +39,19 @@ class ArticleForm(forms.ModelForm):
         widgets = {
             'title':forms.Textarea(attrs={
                 'placeholder':'请输入标题',
-                'class':'form-control'
+                'class':'form-control',
+                
+                'rows':1
             }),
             'body':forms.Textarea(attrs={
                 'placeholder':'请输入正文',
                 'class':'form-control',
                 'rows':15
-            })
+            }),
+            'abstract':forms.Textarea(attrs={
+                'placeholder':'请输入摘要',
+                'class':'form-control',
+                'rows':4
+            }),
+            
         }

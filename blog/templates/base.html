@@ -28,11 +28,11 @@
   <body>
       <div class="row demo-row">
           <div class="col-xs-12">
-            <nav class="navbar navbar-inverse navbar-embossed navbar-fixed-top" role="navigation">
+            <nav  class="navbar navbar-inverse navbar-embossed navbar-fixed-top" role="navigation">
               <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse-01">
-                  <span class="sr-only">切换导航</span>
-                </button>
+                  <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse-01">
+                    <span class="sr-only">切换导航</span>
+                  </button>
                 <a class="navbar-brand" href="#">BoUncle Blog</a>
               </div>
               <div class="collapse navbar-collapse" id="navbar-collapse-01">
@@ -68,15 +68,9 @@
             </nav><!-- /navbar -->
           </div>
         </div>
-        <div class='container'>
-            <div class="col-lg-9">
         {% block content %}
-        <p>默认内容</p>
-        <hr>
+        {% endblock %}
         
-        {% endblock %} 
-            </div>
-        </div> 
         
     <script>  
         $(window).scroll(function () {  

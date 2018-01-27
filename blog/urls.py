@@ -3,5 +3,5 @@ from blog import views,urls
 
 urlpatterns = [
     path('',views.cover),
-    path('blog',views.home)
+    path('edit',views.edit)
 ]
