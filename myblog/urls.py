@@ -17,10 +17,13 @@ from django.contrib import admin
 from django.urls import path,include
 from django.conf.urls import url
 from blog import views,urls,upload
+from django.conf.urls.static import static
+from myblog import settings
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('',include('blog.urls')),
     url(r'^admin/uploads/(?P<dir_name>[^/]+)$', upload.upload_image, name='upload_image'),
+    url(r'^ckeditor/', include('ckeditor_uploader.urls')),
 #    url(r"^uploads/(?P<path>.*)$", views.static.serve, {"document_root": settings.MEDIA_ROOT, }),
-]
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

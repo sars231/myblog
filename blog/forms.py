@@ -1,5 +1,5 @@
 from django import forms
-from .models import Article, BlogComment, Suggest
+from .models import Article, BlogComment, Suggest,Tag
 
 
 class BlogCommentForm(forms.ModelForm):
@@ -16,6 +16,21 @@ class BlogCommentForm(forms.ModelForm):
                                           'class': 'form-control',
                                           'rows': 4,
                                           }),
+        }
+
+class TagForm(forms.ModelForm):
+    class Meta:
+        model = Tag
+        fields = ['name',]
+        widgets = {
+            'name':forms.TextInput(attrs={
+                'name':"tagsinput", 
+                'class':"tagsinput", 
+                'data-role':"tagsinput",
+                'value':"School, Teacher, Colleague" 
+
+            }),
+            
         }
 
 
