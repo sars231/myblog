@@ -1,8 +1,48 @@
 {% extends 'base.html' %}
+
 {% block content %}
-<div class='container'>
-    {% for af in aform %}
-    {{ af.body | safe }}<hr><br>
-    {% endfor %}
-</div>
+        <div class="row">
+                <div class="col-md-8 blog-main">
+                        <h3 class="pb-3 mb-4 font-italic border-bottom">
+                                全部博客
+                        </h3>
+                       
+                <div class="blog-post">
+                        {% for af in aform %} 
+                        <h2 class="blog-post-title">{{ af.title | safe }}</h2>
+                        <p class="blog-post-meta">{{ af.created_time}} Created By <a href="#">Bo Uncle</a></p>
+                        <p>{{ af.abstract | safe }}</p>
+                        {% endfor %}       
+                </div>
+                </div>
+               
+                <aside class="col-md-4 blog-sidebar">
+                        {% include 'aside.html' %}
+                </aside>  
+                    
+        </div>
+        <!-- <div class="pagination">
+                <span class="step-links">
+                    {% if aform.has_previous %}
+                        <a href="?page={{ aform.previous_page_number }}">previous</a>
+                    {% endif %}
+             
+                    <span class="current">
+                        Page {{ aform.number }} of {{ aform.paginator.num_pages }}.
+                    </span>
+             
+                    {% if aform.has_next %}
+                        <a href="?page={{ aform.next_page_number }}">next</a>
+                    {% endif %}
+                </span>
+            </div> -->
+        <nav class="blog-pagination">
+                {% if aform.has_previous %}
+                <a class="btn btn-outline-primary" href="?page={{ aform.previous_page_number }}">上一页</a>
+                {% endif %}
+                {% if aform.has_next %}
+                <a class="btn btn-outline-secondary" href="?page={{ aform.next_page_number }}">下一页</a>
+                {% endif %}
+        </nav>
+    
 {% endblock %}

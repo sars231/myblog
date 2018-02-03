@@ -7,7 +7,7 @@ from ckeditor_uploader.fields import RichTextUploadingField
 class Article(models.Model):
 #储存文章信息，包括标题，正文，摘要，时间，浏览量，点赞量，分类，标签，评论    
     title = models.CharField('标题',max_length=100)
-    body = RichTextUploadingField(verbose_name='正文')
+    body = RichTextUploadingField('正文')
     created_time = models.DateTimeField('创建时间', auto_now_add=True)
     # auto_now_add : 创建时间戳，不会被覆盖
     last_modified_time = models.DateTimeField('修改时间', auto_now=True)

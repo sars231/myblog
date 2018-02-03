@@ -1,90 +1,53 @@
-
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>{% block title %}Bo-Uncle Blog{% endblock %}</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="static/image/favicon.ico">
 
-    <!-- Loading Bootstrap -->
-    <link href="static/dist/css/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <title>{% block title %}Blog Template for Bootstrap{% endblock %}</title>
 
-    <!-- Loading Flat UI -->
-    <link href="static/dist/css/flat-ui.css" rel="stylesheet">
+    <!-- Bootstrap core CSS -->
+    <link href="static/css/bootstrap.min.css" rel="stylesheet">
 
-    <link rel="shortcut icon" href="static/dist/img/favicon.ico">
-
-    <!-- HTML5 shim, for IE6-8 support of HTML5 elements. All other JS at the end of file. -->
-    <!--[if lt IE 9]>
-      <script src="../dist/js/vendor/html5shiv.js"></script>
-      <script src="../dist/js/vendor/respond.min.js"></script>
-    <![endif]-->
-    <style type='text/css'>
-      body {
-        padding:50px;
-      }
-    </style>
+    <!-- Custom styles for this template -->
+    <link href="https://fonts.googleapis.com/css?family=Playfair+Display:700,900" rel="stylesheet">
+    <link href="static/css/blog.css" rel="stylesheet">
   </head>
   <body>
-      <div class="row demo-row">
-          <div class="col-xs-12">
-            <nav  class="navbar navbar-inverse navbar-embossed navbar-fixed-top" role="navigation">
-              <div class="navbar-header">
-                  <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse-01">
-                    <span class="sr-only">切换导航</span>
-                  </button>
-                <a class="navbar-brand" href="#">BoUncle Blog</a>
-              </div>
-              <div class="collapse navbar-collapse" id="navbar-collapse-01">
-                <ul class="nav navbar-nav navbar-right">
-                    <li><a href="/" style='font-weight:inherit'>
-                      <span class="glyphicon glyphicon-home"></span>
-                      主页<span class="navbar-unread">1</span></a></li>
-                  <li><a href="/edit" style='font-weight:inherit'>
-                      <span class="glyphicon glyphicon-edit"></span>
-                      写博客</a></li>
-                  <li><a href="#fakelink" style='font-weight:inherit'>文章</a></li>
-                  <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" style='font-weight:inherit'>分  类 <b class="caret"></b></a>
-                    <span class="dropdown-arrow"></span>
-                    <ul class="dropdown-menu">
-                      <li><a href="#">Action</a></li>
-                      <li><a href="#">Another action</a></li>
-                      <li><a href="#">Something else here</a></li>
-                      <li class="divider"></li>
-                      <li><a href="#">Separated link</a></li>
-                    </ul>
-                  </li> 
-                  <li><a href="#fakelink" style='font-weight:inherit'>联  系</a></li>
-                 </ul>
-                 <form class="navbar-form navbar-left" action="#" role="search">
-                  <div class="form-group">
-                    <div class="input-group">
-                      <input class="form-control" id="navbarInput-01" type="search" placeholder="Search">
-                      <span class="input-group-btn">
-                        <button type="submit" class="btn"><span class="fui-search"></span></button>
-                      </span>
-                    </div>
-                  </div>
-                </form>
-              </div><!-- /.navbar-collapse -->
-            </nav><!-- /navbar -->
-          </div>
-        </div>
+    <div class='container'>
+    {% include 'header-nav.html' %}
+    {% include 'baner.html' %}
+    </div>
+    <main role='main' class='container'>
         {% block content %}
-        {% endblock %}
-        
-        
-    <script>  
-        $(window).scroll(function () {  
-            if ($(".navbar").offset().top > 50) {$(".navbar-fixed-top").addClass("top-nav");  
-            }else {$(".navbar-fixed-top").removeClass("top-nav");}  
-        })
-    </script>   
-        <!-- jQuery (necessary for Flat UI's JavaScript plugins) -->
-    <script src="static/dist/js/vendor/jquery.min.js"></script>
-    <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="static/dist/js/vendor/video.js"></script>
-    <script src="static/dist/js/flat-ui.min.js"></script>
+        {% endblock%}
+    </main>
+      
+
+    <footer class="blog-footer">
+      <p>Blog template built for <a href="https://getbootstrap.com/">Bootstrap</a> by <a href="https://twitter.com/mdo">@mdo</a>.</p>
+      <p><a href="#">Back to top</a></p>
+    </footer>
+  
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script>window.jQuery || document.write('<script src="../../../../assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
+    <script src="static/dist/js/vendor/popper.min.js"></script>
+    <script src="static/dist/js/bootstrap.min.js"></script>
+    <script src="static/dist/js/vendor/holder.min.js"></script>
+    <script>
+      Holder.addTheme('thumb', {
+        bg: '#55595c',
+        fg: '#eceeef',
+        text: 'Thumbnail'
+      });
+    </script>
   </body>
-</html>
+
+
+
